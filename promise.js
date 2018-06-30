@@ -47,7 +47,7 @@ const eatMeal = Promise.all([
   drinksPromise
 ])
   .then(([fries, burger, drinks]) => {
-    console.log(`Chomp. Awesome ${burger}! 🍔`)
-    console.log(`Chomp. Delicious ${fries}! 🍟`)
-    console.log(`Slurp. Ugh, shitty drink ${drink} 🤢 `)
+    console.log(`Chomp. Awesome ${burger}`)
+    console.log(`Chomp. Delicious ${fries}`)
+    console.log(`Slurp. Ugh, shitty drink ${drink}`)
   });
