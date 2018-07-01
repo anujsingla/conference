@@ -51,3 +51,53 @@ const eatMeal = Promise.all([
     console.log(`Chomp. Delicious ${fries}`)
     console.log(`Slurp. Ugh, shitty drink ${drink}`)
   });
+
+// async/await
+// Async/await is a new way to write asynchronous code or promises.
+// Async/await is actually built on top of promises.
+
+// Async functions
+// we use async keyword before function and this function always return promise
+// if we are not returning promise it will automatically return promise.
+
+async function foo() {
+    return Promise.resolve('promise');
+}
+foo().then(alert); // promise
+
+// await
+// it will make javascript wait until promise resolved.
+// it will work inside async function.
+
+// making using promise
+const getRequest = function() {
+    getJSON().then(data => {
+        console.log(data)
+        return "done"
+    })
+}
+
+getRequest();
+
+// using async/await
+const getRequest = async function() {
+    const data = await getJSON();
+    console.log(data);
+    return "done"
+}
+  
+getRequest();
+
+// example
+async function foo() {
+    
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("done after 1 min"), 1000)
+    });
+
+    let result = await promise; // wait till the promise resolves (*)
+
+    console.log(result); // "done after 1 min"
+}
+    
+foo();
