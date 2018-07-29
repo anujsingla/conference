@@ -79,18 +79,3 @@ function foo ({
 foo() // Zell Liew
 foo({firstName: 'Zell'}) // Zell Liew
 foo({firstName: 'Vincy', lastName: 'Zhang'}) // Vincy Zhang
-
-
-
-// practice
-var Zell1 = {
-    firstName: 'Zell',
-    lastName: 'Liew'
-}
-
-var m = {
-    a:firstName,
-    b:lastName
-} = Zell1
-
-console.log(a); //

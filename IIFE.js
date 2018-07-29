@@ -8,6 +8,7 @@
 // Creation — Execution — Discarding of a function in one statement (manage browser memory)
 // no conflict code with application.
 
+// jquery library link https://code.jquery.com/jquery-3.3.1.js
 
 (function () {
     // logic here
@@ -16,18 +17,16 @@
 var greeting = 'outside greeting'; 
 (function(name) {
     var greeting = 'inside greeting';
-    console.log(this);
     console.log('hello ' +name + ' '+ greeting);
 }('hh'));
 
 console.log(greeting);
 
-// IIFE use global variable
+// IIFE use global variable and expose variable outside from the function
 var greeting = 'outside greeting'; 
 (function(name, global) {
     var greeting = 'inside greeting';
     window.greeting = 'change inside iife';
-    console.log(this);
     console.log('hello ' +name + ' '+ greeting);
 }('hh', window));
 

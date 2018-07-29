@@ -22,7 +22,7 @@ const fooPromise = (cake) => {
     });
 }
 
-const promise = fooPromise('black forest11');
+const promise = fooPromise('black forest');
 
 promise
 .then((msg) => {
@@ -97,7 +97,7 @@ async function foo() {
 
     let result = await promise; // wait till the promise resolves (*)
 
-    console.log(result); // "done after 1 min"
+    console.log(result); // "done after 1 sec"
 }
-    
+ 
 foo();

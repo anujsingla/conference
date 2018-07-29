@@ -2,7 +2,7 @@
 // this object value is set by the function that call it. 
 // Every function defines its own this object value.
 
-//1. When this object is called outside function than it represent window object.
+//1. When this object is called outside function then it represent window object.
 console.log(this) // Window
 
 2. // When this is called inside simple function call this object is represent as a 
@@ -28,7 +28,7 @@ hello() // Window
  // 3. execute contructor with this means assign value in the objec with this
  // 4. return value obj
 
- function Person (age) {
+function Person (age) {
     this.age = age
 }
 Person.prototype.talk = function() {
@@ -69,21 +69,20 @@ var pokemon = {
         return fullname;
     }
  };
+
+ // or bind in the function
+ var pokemonName = function() {
+    console.log(this.getPokeName() + 'I choose you!');
+ };
  
+ var logPokemon = pokemonName.bind(pokemon); // creates new object and binds pokemon. 'this' of pokemon === pokemon now
+ logPokemon(); // 'Pika Chu I choose you!'
+
  var pokemonName = function(lang1, lang2) {
     console.log(this.getPokeName() + 'I choose you!');
     console.log(lang1 + lang2);
  };
 
- // or bind in the function
- var pokemonName = function() {
-    console.log(this.getPokeName() + 'I choose you!');
- }.bind(pokemon);
- 
- var logPokemon = pokemonName.bind(pokemon); // creates new object and binds pokemon. 'this' of pokemon === pokemon now
- logPokemon(); // 'Pika Chu I choose you!'
-
- 
  pokemonName.call(pokemon, 'en', 'el');
  pokemonName.apply(pokemon, ['en', 'el']);
 
