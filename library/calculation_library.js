@@ -38,7 +38,7 @@
     }
 
     Calculation.init = function() {
-        console.log('Calculation initialize');
+        console.log('Calculation library is initialized');
     }
     Calculation.init.prototype = Calculation.prototype;
 
